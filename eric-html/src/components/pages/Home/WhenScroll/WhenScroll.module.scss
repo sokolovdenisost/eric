@@ -1,0 +1,23 @@
+@import "styles/mixins.scss";
+@import "styles/colors.scss";
+@import "styles/fonts.scss";
+
+.scrollBlock {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+.scroll {
+  width: 100%;
+  height: size(2);
+  margin: 0 size(20);
+  background-color: $black;
+}
+
+.text {
+  @include f('H4');
+  min-width: fit-content;
+  margin-right: size(20);
+  text-transform: uppercase;
+}

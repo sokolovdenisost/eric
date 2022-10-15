@@ -1,0 +1,6 @@
+$baseScreenSize: 1440;
+$mobileScreenSize: 360;
+
+@function size($pixels) {
+  @return calc(((#{$pixels} / var(--screen-size)) * 100) * 1vw);
+}

@@ -1,0 +1,30 @@
+@import "styles/mixins.scss";
+@import "styles/fonts.scss";
+@import "styles/colors.scss";
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+}
+
+.center {
+  text-align: center;
+}
+
+.title {
+  @include f('H1');
+}
+
+.number {
+  margin: size(10) 0 size(30);
+  font-family: $oranienbaum;
+  font-size: size(400);
+  line-height: 115%;
+}
+
+.link {
+  @include f('H4');
+  color: $black;
+}
