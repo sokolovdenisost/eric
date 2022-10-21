@@ -1,8 +1,9 @@
-import type { FC } from "react";
-import s from "./Footer.module.scss";
-import { nav } from "constants/nav";
-import { NavType } from "types/nav";
-import classNames from "classnames";
+import type { FC } from 'react';
+import s from './Footer.module.scss';
+import { nav } from 'constants/nav';
+import { NavType } from 'types/nav';
+import classNames from 'classnames';
+import Link from 'next/link';
 
 const getItems = (data: NavType) => (
   <li key={data.href} className={s.item}>
@@ -15,10 +16,10 @@ const getItems = (data: NavType) => (
 const Footer: FC = () => {
   return (
     <footer className={s.root}>
-      <div className={classNames(s.body, "container")}>
-        <a href="/" className={s.logo}>
-          ЕРИЦ
-        </a>
+      <div className={classNames(s.body, 'container')}>
+        <Link href="/">
+          <a className={s.logo}>ЕРИЦ</a>
+        </Link>
         <p className={s.description}>
           Единый расчетно – информационный центр, сокращенно ЕРИЦ, представляет
           собой учреждение, созданное с целью обеспечения координации и

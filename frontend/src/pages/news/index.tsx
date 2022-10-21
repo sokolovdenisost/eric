@@ -1,12 +1,12 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Page from 'components/Page';
-import Home from 'pages/Home';
+import News from 'pages/News';
 import data from 'stubs/homePage';
 
-const HomePage: NextPage<any> = ({ content }) => {
+const NewsPage: NextPage<any> = () => {
   return (
-    <Page title="Главная">
-      <Home content={content} />
+    <Page title="Новости">
+      <News />
     </Page>
   );
 };
@@ -19,4 +19,4 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default HomePage;
+export default NewsPage;

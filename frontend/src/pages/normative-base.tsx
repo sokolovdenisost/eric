@@ -1,12 +1,12 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Page from 'components/Page';
-import Home from 'pages/Home';
+import NormativeBase from 'pages/NormativeBase';
 import data from 'stubs/homePage';
 
-const HomePage: NextPage<any> = ({ content }) => {
+const NormativeBasePage: NextPage<any> = () => {
   return (
-    <Page title="Главная">
-      <Home content={content} />
+    <Page title="Нормативно-правовая база">
+      <NormativeBase />
     </Page>
   );
 };
@@ -19,4 +19,4 @@ export const getStaticProps: GetStaticProps = async () => {
   };
 };
 
-export default HomePage;
+export default NormativeBasePage;
