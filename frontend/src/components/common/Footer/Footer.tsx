@@ -1,16 +1,21 @@
-import type { FC } from 'react';
-import s from './Footer.module.scss';
-import { Nav, nav } from 'constants/nav';
-import classNames from 'classnames';
-import RunningText from 'components/RunningText';
+import type { FC } from "react";
+import s from "./Footer.module.scss";
+import { nav } from "constants/nav";
+import { NavType } from "types/nav";
+import classNames from "classnames";
+
+const getItems = (data: NavType) => (
+  <li key={data.href} className={s.item}>
+    <a href={data.href} className={s.link}>
+      {data.title}
+    </a>
+  </li>
+);
 
 const Footer: FC = () => {
   return (
     <footer className={s.root}>
-      <RunningText
-        words={['осташков', 'единый расчетно-информационный центр']}
-      />
-      <div className={classNames(s.body, 'container')}>
+      <div className={classNames(s.body, "container")}>
         <a href="/" className={s.logo}>
           ЕРИЦ
         </a>
@@ -25,15 +30,7 @@ const Footer: FC = () => {
         </p>
         <div className={s.menu}>
           <p className={s.title}>МЕНЮ</p>
-          <ul className={s.list}>
-            {nav.map((data: Nav) => (
-              <li key={data.href} className={s.item}>
-                <a href={data.href} className={s.link}>
-                  {data.title}
-                </a>
-              </li>
-            ))}
-          </ul>
+          <ul className={s.list}>{nav.map(getItems)}</ul>
         </div>
       </div>
       <div className={s.rights}>
