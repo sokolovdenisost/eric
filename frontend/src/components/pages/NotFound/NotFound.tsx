@@ -8,7 +8,7 @@ const NotFound: FC = () => {
     <div className={s.root}>
       <div className={s.center}>
         <Mask config={{ duration: 2 }}>
-          <h1 className={s.title}>Страница не найдена</h1>
+          <h2 className={s.title}>Страница не найдена</h2>
         </Mask>
         <Mask config={{ delay: 0.75, duration: 2 }}>
           <p className={s.number}>404</p>

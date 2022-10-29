@@ -1,0 +1,23 @@
+@import 'styles/mixins.scss';
+@import 'styles/fonts.scss';
+@import 'styles/colors.scss';
+
+.button {
+  cursor: pointer;
+  border-radius: size(5);
+}
+
+.button.opal {
+  background-color: $opal;
+  color: $white;
+  transition: all 0.15s ease;
+}
+
+.button.opal:hover {
+  opacity: 0.9;
+}
+
+.button.big {
+  @include f('normal');
+  padding: size(20) size(50);
+}

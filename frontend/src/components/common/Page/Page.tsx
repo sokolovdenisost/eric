@@ -20,9 +20,7 @@ const Page: FC<Props> = ({ title, children }) => {
         <Header />
       </Mask>
       {children}
-      <Mask config={{ duration: 1 }}>
-        <Footer />
-      </Mask>
+      <Footer />
     </>
   );
 };

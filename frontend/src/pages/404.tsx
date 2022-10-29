@@ -3,11 +3,7 @@ import NotFound from 'pages/NotFound';
 import Page from 'components/Page';
 
 const NotFoundPage: NextPage = () => {
-  return (
-    <Page title="Страница не найдена">
-      <NotFound />
-    </Page>
-  );
+  return <NotFound />;
 };
 
 export default NotFoundPage;

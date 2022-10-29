@@ -1,0 +1,25 @@
+@import 'styles/mixins.scss';
+@import 'styles/fonts.scss';
+@import 'styles/colors.scss';
+
+.root {
+  width: size(950);
+  margin: size(100) auto size(150);
+}
+
+.inputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.inputs > label {
+  margin-bottom: size(50);
+}
+
+.button {
+  display: block;
+  margin-top: size(100);
+  margin-left: auto;
+}

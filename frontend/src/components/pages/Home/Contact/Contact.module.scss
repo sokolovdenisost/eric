@@ -1,0 +1,23 @@
+@import "styles/mixins.scss";
+@import "styles/fonts.scss";
+@import "styles/colors.scss";
+
+.root {
+  margin: size(100) size(50);
+}
+
+.title {
+  @include f('H1');
+}
+
+.block {
+  margin-top: size(60);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.left {
+  display: flex;
+  flex-direction: column;
+  grid-gap: size(60);
+}

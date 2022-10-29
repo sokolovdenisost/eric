@@ -1,13 +1,13 @@
 import type { NextPage } from 'next';
 import Page from 'components/Page';
-import News from 'pages/News';
+import Feedback from 'pages/Feedback';
 
-const NewsPage: NextPage<any> = () => {
+const FeedbackPage: NextPage<any> = () => {
   return (
     <Page title="Новости">
-      <News />
+      <Feedback />
     </Page>
   );
 };
 
-export default NewsPage;
+export default FeedbackPage;

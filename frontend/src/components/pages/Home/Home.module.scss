@@ -4,6 +4,7 @@
 
 .root {
   margin: size(135) 0 size(90);
+  overflow: hidden;
 }
 
 .title {
@@ -12,26 +13,4 @@
   text-align: center;
   width: size(915);
   margin: 0 auto;
-}
-
-.links {
-  margin: size(100) size(50);
-}
-
-.item {
-  @include f('H4');
-  margin-bottom: size(50);
-}
-
-.item:last-child {
-  margin-bottom: 0;
-}
-
-.link {
-  color: $black;
-  transition: color 0.15s ease;
-}
-
-.link:hover {
-  color: $gray;
 }

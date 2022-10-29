@@ -1,17 +1,17 @@
 $oranienbaum: 'Oranienbaum', serif;
 
 @mixin f($type) {
-  @if $type == 'Big text' {
+  @if $type == 'H1' {
     font-family: $oranienbaum;
     font-weight: 400;
     font-size: size(80);
     line-height: 115%;
-  } @else if $type == 'H1' {
+  } @else if $type == 'H2' {
     font-family: $oranienbaum;
     font-weight: 400;
     font-size: size(46);
     line-height: 115%;
-  } @else if $type == 'H2' {
+  } @else if $type == 'H3' {
     font-family: $oranienbaum;
     font-weight: 400;
     font-size: size(38);

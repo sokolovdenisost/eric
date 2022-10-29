@@ -1,0 +1,44 @@
+@import 'styles/mixins.scss';
+
+.root {
+  height: 100%;
+  width: calc(100% + size(20));
+}
+
+.image {
+  height: 100%;
+  width: calc(100% - size(20));
+  object-fit: cover;
+}
+
+.root.BIG_SQUARE {
+  min-width: size(620);
+
+  .image {
+    border-radius: size(40);
+  }
+}
+
+.root.SMALL_SQUARE {
+  min-width: size(320);
+}
+
+.root.SMALL_SQUARE .image {
+  border-radius: size(40);
+}
+
+.root.BIG_OVAL {
+  min-width: size(620);
+}
+
+.root.BIG_OVAL .image {
+  border-radius: size(200);
+}
+
+.root.SMALL_OVAL {
+  min-width: size(320);
+}
+
+.root.SMALL_OVAL .image {
+  border-radius: size(200);
+}

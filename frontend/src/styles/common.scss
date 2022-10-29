@@ -1,9 +1,13 @@
-@import "styles/colors.scss";
-@import "styles/mixins.scss";
-@import "styles/fonts.scss";
+@import 'styles/colors.scss';
+@import 'styles/mixins.scss';
+@import 'styles/fonts.scss';
+
+* {
+  box-sizing: border-box;
+}
 
 body {
-  @include f("normal");
+  @include f('normal');
   color: $black;
   background-color: $white;
   --screen-size: #{$baseScreenSize};

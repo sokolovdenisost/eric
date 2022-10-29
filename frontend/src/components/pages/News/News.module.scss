@@ -7,9 +7,17 @@
 }
 
 .title {
-  @include f('Big text');
+  @include f('H1');
   position: relative;
   text-align: center;
   width: size(915);
   margin: 0 auto;
+}
+
+.news {
+  display: grid;
+  grid-template-columns: size(430) size(430) size(430);
+  grid-column-gap: size(25);
+  grid-row-gap: size(50);
+  margin: size(100) size(50);
 }

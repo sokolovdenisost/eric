@@ -1,0 +1,42 @@
+@import 'styles/mixins.scss';
+@import 'styles/fonts.scss';
+@import 'styles/colors.scss';
+
+.root {
+  display: block;
+  width: size(450);
+  position: relative;
+}
+
+.label {
+  @include f('H4');
+  cursor: text;
+  position: absolute;
+  bottom: size(10);
+  left: size(10);
+  color: $gray;
+  transition: all 0.15s ease;
+}
+
+.input {
+  @include f('H4');
+  border: none;
+  width: size(450);
+  border-bottom: size(1) solid $gray;
+  padding: size(10);
+}
+
+.input:focus ~ .label,
+.input:valid ~ .label {
+  transform: translate3d(size(-10), -120%, 0);
+  color: $black;
+}
+
+.input ~ .label.error,
+.input.error {
+  color: $red;
+}
+
+.input:focus {
+  outline: none;
+}

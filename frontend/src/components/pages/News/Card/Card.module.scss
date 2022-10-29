@@ -1,0 +1,35 @@
+@import 'styles/mixins.scss';
+@import 'styles/fonts.scss';
+@import 'styles/colors.scss';
+
+.root {
+  display: block;
+  width: size(430);
+}
+
+.block {
+  overflow: hidden;
+  border-radius: size(5);
+}
+
+.img {
+  width: 100%;
+  height: size(300);
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.root:hover .img {
+  transform: scale(1.1);
+}
+
+.title {
+  @include f('H4');
+  color: $black;
+  margin: size(10) 0;
+}
+
+.date {
+  @include f('normal');
+  color: $gray;
+}

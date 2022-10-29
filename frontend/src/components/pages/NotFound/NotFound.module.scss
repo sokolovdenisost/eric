@@ -1,6 +1,6 @@
-@import "styles/mixins.scss";
-@import "styles/fonts.scss";
-@import "styles/colors.scss";
+@import 'styles/mixins.scss';
+@import 'styles/fonts.scss';
+@import 'styles/colors.scss';
 
 .root {
   display: flex;
@@ -14,7 +14,7 @@
 }
 
 .title {
-  @include f('H1');
+  @include f('H2');
 }
 
 .number {
