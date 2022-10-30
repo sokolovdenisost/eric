@@ -1,0 +1,52 @@
+@import 'styles/mixins.scss';
+@import 'styles/fonts.scss';
+@import 'styles/colors.scss';
+
+.root {
+  margin: size(135) size(50);
+}
+
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.title {
+  @include f('H2');
+}
+
+.datePublish {
+  @include f('normal');
+  color: $gray;
+}
+
+.date {
+  color: $opal;
+}
+
+.body {
+  margin: size(50) 0 size(100);
+
+  h1 {
+    @include f('H1');
+  }
+
+  h2 {
+    @include f('H2');
+  }
+
+  h3 {
+    @include f('H3');
+  }
+
+  h4,
+  h5,
+  h6 {
+    @include f('H4');
+  }
+
+  p {
+    @include f('normal');
+  }
+}

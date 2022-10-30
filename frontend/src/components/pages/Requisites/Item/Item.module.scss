@@ -1,0 +1,30 @@
+@import 'styles/mixins.scss';
+@import 'styles/fonts.scss';
+@import 'styles/colors.scss';
+
+.root {
+  width: size(650);
+
+  @include mobile {
+    width: size(320);
+  }
+}
+
+.title {
+  @include f('H4');
+  color: $gray;
+  margin-bottom: size(10);
+
+  @include mobile {
+    @include f('m/h4');
+    margin-bottom: size(5);
+  }
+}
+
+.description {
+  @include f('H3');
+
+  @include mobile {
+    @include f('m/h3');
+  }
+}

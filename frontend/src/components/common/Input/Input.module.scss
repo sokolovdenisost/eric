@@ -6,6 +6,10 @@
   display: block;
   width: size(450);
   position: relative;
+
+  @include mobile {
+    width: size(320);
+  }
 }
 
 .label {
@@ -16,6 +20,10 @@
   left: size(10);
   color: $gray;
   transition: all 0.15s ease;
+
+  @include mobile {
+    @include f('m/h4');
+  }
 }
 
 .input {
@@ -24,17 +32,28 @@
   width: size(450);
   border-bottom: size(1) solid $gray;
   padding: size(10);
+
+  @include mobile {
+    @include f('m/h4');
+    width: size(320);
+  }
 }
 
 .input:focus ~ .label,
 .input:valid ~ .label {
-  transform: translate3d(size(-10), -120%, 0);
+  transform: translate3d(size(-10), -160%, 0);
+  @include f('normal');
   color: $black;
+
+  @include mobile {
+    @include f('m/normal');
+  }
 }
 
 .input ~ .label.error,
 .input.error {
   color: $red;
+  border-bottom-color: $red;
 }
 
 .input:focus {

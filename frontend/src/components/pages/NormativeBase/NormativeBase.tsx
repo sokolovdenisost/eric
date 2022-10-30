@@ -4,7 +4,7 @@ import Mask from 'components/Animations/Mask';
 
 const getItem = (data: any, idx: number) => (
   <li className={s.item}>
-    <Mask config={{ delay: 0.5 * idx, duration: 2 }} key={idx}>
+    <Mask config={{ delay: 1 + idx * 0.25, duration: 1 }} key={idx}>
       <a href="/" className={s.link}>
         Об утверждении нормативов потребления коммунальной услуги по холодному и
         горячему водоснабжению в жилых помещениях при отсутствии индивидуальных

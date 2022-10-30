@@ -4,7 +4,10 @@
 
 .root {
   margin: size(135) 0 size(90);
-  overflow: hidden;
+}
+
+.top {
+  position: relative;
 }
 
 .title {
@@ -13,4 +16,12 @@
   text-align: center;
   width: size(915);
   margin: 0 auto;
+}
+
+.description {
+  position: absolute;
+  right: size(270);
+  top: size(-44);
+  @include f('H3 Italic');
+  color: $opal;
 }

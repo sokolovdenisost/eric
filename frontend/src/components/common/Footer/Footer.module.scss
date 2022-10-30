@@ -11,6 +11,12 @@
   align-items: flex-start;
   gap: size(100);
   margin-bottom: size(50);
+
+  @include mobile {
+    flex-direction: column;
+    gap: size(25);
+    margin: 0 size(20) size(50);
+  }
 }
 
 .logo {
@@ -18,12 +24,21 @@
   color: $white;
   text-shadow: 1px 0 $black, -1px 0 $black, 0 1px $black, 0 -1px $black,
     1px 1px $black, -1px -1px $black, 1px -1px $black, -1px 1px $black;
+
+  @include mobile {
+    margin: 0 auto;
+  }
 }
 
 .description {
   @include f('normal');
   width: size(700);
   color: $gray;
+
+  @include mobile {
+    width: size(320);
+    @include f('m/normal');
+  }
 }
 
 .title {
@@ -31,6 +46,10 @@
   text-decoration: underline;
   color: $black;
   margin-bottom: size(15);
+
+  @include mobile {
+    @include f('m/normal');
+  }
 }
 
 .list {
@@ -42,14 +61,26 @@
 .link {
   @include f('normal');
   color: $black;
+
+  @include mobile {
+    @include f('m/normal');
+  }
 }
 
 .rights {
   padding: size(25) size(50);
   background-color: $lightGray;
+
+  @include mobile {
+    padding: size(15) size(20);
+  }
 }
 
 .allRights {
   @include f('normal');
   color: $black;
+
+  @include mobile {
+    @include f('m/normal');
+  }
 }

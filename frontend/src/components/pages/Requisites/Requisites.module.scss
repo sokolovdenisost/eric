@@ -23,3 +23,17 @@
     width: 100%;
   }
 }
+
+.items {
+  display: grid;
+  grid-template-columns: size(650) size(650);
+  grid-column-gap: size(40);
+  grid-row-gap: size(30);
+  margin: size(100) size(50);
+
+  @include mobile {
+    grid-template-columns: size(320);
+    grid-row-gap: size(15);
+    margin: size(50) size(20);
+  }
+}

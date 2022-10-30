@@ -13,10 +13,10 @@ body {
   --screen-size: #{$baseScreenSize};
   overflow-x: hidden;
 
-  //@include mobile {
-  //  @include f('m/normal');
-  //  --screen-size: #{$mobileScreenSize};
-  //}
+  @include mobile {
+    @include f('m/normal');
+    --screen-size: #{$mobileScreenSize};
+  }
 }
 
 .container {

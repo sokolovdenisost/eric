@@ -4,3 +4,9 @@ $mobileScreenSize: 360;
 @function size($pixels) {
   @return calc(((#{$pixels} / var(--screen-size)) * 100) * 1vw);
 }
+
+@mixin mobile() {
+  @media only screen and (max-width: 767px) {
+    @content;
+  }
+}

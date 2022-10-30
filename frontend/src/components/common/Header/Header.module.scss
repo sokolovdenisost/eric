@@ -7,6 +7,10 @@
   align-items: center;
   justify-content: space-between;
   margin-top: size(25);
+
+  @include mobile {
+    margin: size(20);
+  }
 }
 
 .logo {
@@ -19,6 +23,10 @@
 .nav {
   display: flex;
   gap: size(40);
+
+  @include mobile {
+    display: none;
+  }
 }
 
 .link {

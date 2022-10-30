@@ -1,4 +1,5 @@
 $oranienbaum: 'Oranienbaum', serif;
+$markscript: 'Marck Script', cursive;
 
 @mixin f($type) {
   @if $type == 'H1' {
@@ -16,6 +17,11 @@ $oranienbaum: 'Oranienbaum', serif;
     font-weight: 400;
     font-size: size(38);
     line-height: 115%;
+  } @else if $type == 'H3 Italic' {
+    font-family: $markscript;
+    font-weight: 400;
+    font-size: size(38);
+    line-height: 115%;
   } @else if $type == 'H4' {
     font-family: $oranienbaum;
     font-weight: 400;
@@ -25,6 +31,31 @@ $oranienbaum: 'Oranienbaum', serif;
     font-family: $oranienbaum;
     font-weight: 400;
     font-size: size(20);
+    line-height: 115%;
+  } @else if $type == 'm/h1' {
+    font-family: $oranienbaum;
+    font-weight: 400;
+    font-size: size(40);
+    line-height: 115%;
+  } @else if $type == 'm/h2' {
+    font-family: $oranienbaum;
+    font-weight: 400;
+    font-size: size(26);
+    line-height: 115%;
+  } @else if $type == 'm/h3' {
+    font-family: $oranienbaum;
+    font-weight: 400;
+    font-size: size(22);
+    line-height: 115%;
+  } @else if $type == 'm/h4' {
+    font-family: $oranienbaum;
+    font-weight: 400;
+    font-size: size(18);
+    line-height: 115%;
+  } @else if $type == 'm/normal' {
+    font-family: $oranienbaum;
+    font-weight: 400;
+    font-size: size(16);
     line-height: 115%;
   }
 }

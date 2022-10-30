@@ -1,0 +1,26 @@
+@import 'styles/mixins.scss';
+@import 'styles/fonts.scss';
+@import 'styles/colors.scss';
+
+.title {
+  @include f('H3');
+}
+
+.document {
+  margin-top: size(50);
+  width: size(400);
+}
+
+.image {
+  width: size(400);
+  height: size(250);
+  border-radius: size(5);
+  border: size(1) solid $black;
+  object-fit: cover;
+}
+
+.name {
+  @include f('normal');
+  margin-top: size(5);
+  color: $black;
+}

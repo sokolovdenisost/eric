@@ -4,7 +4,7 @@ import Feedback from 'pages/Feedback';
 
 const FeedbackPage: NextPage<any> = () => {
   return (
-    <Page title="Новости">
+    <Page title="Обратная связь">
       <Feedback />
     </Page>
   );

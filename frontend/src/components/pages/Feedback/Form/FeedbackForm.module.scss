@@ -5,6 +5,21 @@
 .root {
   width: size(950);
   margin: size(100) auto size(150);
+
+  @include mobile {
+    width: size(320);
+    margin: size(35) auto size(60);
+  }
+}
+
+.memo {
+  @include f('H4');
+  color: $opal;
+  margin-bottom: size(50);
+
+  @include mobile {
+    @include f('m/h4');
+  }
 }
 
 .inputs {
@@ -16,10 +31,18 @@
 
 .inputs > label {
   margin-bottom: size(50);
+
+  @include mobile {
+    margin-bottom: size(25);
+  }
 }
 
 .button {
   display: block;
   margin-top: size(100);
   margin-left: auto;
+
+  @include mobile {
+    margin: size(50) auto 0;
+  }
 }
