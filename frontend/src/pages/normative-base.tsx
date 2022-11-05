@@ -1,18 +1,21 @@
 import type { GetStaticProps, NextPage } from 'next';
 import Page from 'components/Page';
 import NormativeBase from 'pages/NormativeBase';
-import data from 'stubs/homePage';
+import { getSingle } from 'strapi/index';
+import { NormativeBaseContent } from 'types/normativeBase';
 
-const NormativeBasePage: NextPage<any> = () => {
-  return (
-    <Page title="Нормативно-правовая база">
-      <NormativeBase />
-    </Page>
-  );
-};
+interface Props {
+  content: NormativeBaseContent;
+}
+
+const NormativeBasePage: NextPage<Props> = ({ content }) => (
+  <Page title="Нормативно-правовая база">
+    <NormativeBase content={content} />
+  </Page>
+);
 
 export const getStaticProps: GetStaticProps = async () => {
-  const content = data;
+  const content = await getSingle('normative-base-page', { populate: '*' });
 
   return {
     props: { content }

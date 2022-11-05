@@ -4,22 +4,13 @@
   "info": {
     "singularName": "home-page",
     "pluralName": "home-pages",
-    "displayName": "HomePage",
-    "description": ""
+    "displayName": "HomePage"
   },
   "options": {
     "draftAndPublish": true
   },
   "pluginOptions": {},
   "attributes": {
-    "title": {
-      "type": "string",
-      "required": true
-    },
-    "description": {
-      "type": "string",
-      "required": true
-    },
     "runningSlider": {
       "displayName": "RunningSlider",
       "type": "component",
@@ -27,14 +18,15 @@
       "component": "home.running-slider"
     },
     "about": {
-      "displayName": "about",
+      "displayName": "About",
       "type": "component",
       "repeatable": true,
       "component": "home.about"
     },
-    "contact": {
+    "contacts": {
+      "displayName": "Contact",
       "type": "component",
-      "repeatable": false,
+      "repeatable": true,
       "component": "home.contact"
     }
   }

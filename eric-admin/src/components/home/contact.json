@@ -1,21 +1,17 @@
 {
   "collectionName": "components_home_contacts",
   "info": {
-    "displayName": "contact",
-    "description": ""
+    "displayName": "Contact"
   },
   "options": {},
   "attributes": {
-    "contacts": {
-      "displayName": "contacts",
-      "type": "component",
-      "repeatable": true,
-      "component": "home.contacts"
+    "title": {
+      "type": "string",
+      "required": true
     },
-    "address": {
-      "type": "component",
-      "repeatable": false,
-      "component": "home.contacts"
+    "description": {
+      "type": "string",
+      "required": true
     }
   }
 }

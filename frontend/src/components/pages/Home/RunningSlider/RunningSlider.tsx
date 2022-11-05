@@ -4,12 +4,17 @@ import RunningSlide from 'pages/Home/RunningSlider/RunningSlide';
 import { useEffect, useRef } from 'react';
 import horizontalLoop from 'utils/horizontalLoop';
 import gsap from 'gsap';
+import type { Image, RunningSlideType } from 'types/home';
 
-const getSlides = (data: any) => (
-  <RunningSlide key={`${data.id}${Math.random()}`} data={data} />
+const getSlides = (data: RunningSlideType<Image>) => (
+  <RunningSlide key={data.id} data={data} />
 );
 
-const RunningSlider: FC<any> = ({ data }) => {
+interface Props {
+  data: RunningSlideType<Image>[];
+}
+
+const RunningSlider: FC<Props> = ({ data }) => {
   const animation: MutableRefObject<any> = useRef({});
   const slider: MutableRefObject<HTMLDivElement | null> = useRef(null);
   const widthRef: MutableRefObject<any> = useRef({});
