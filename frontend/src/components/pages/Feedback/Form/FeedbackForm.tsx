@@ -2,6 +2,7 @@ import s from './FeedbackForm.module.scss';
 import Input from 'components/Input';
 import Button from 'components/Button';
 import Form from 'components/Form/Form';
+import { memo } from 'react';
 
 const FeedbackForm = () => {
   const submitHandler = (data: any) => console.log(data);
@@ -30,4 +31,4 @@ const FeedbackForm = () => {
   );
 };
 
-export default FeedbackForm;
+export default memo(FeedbackForm);

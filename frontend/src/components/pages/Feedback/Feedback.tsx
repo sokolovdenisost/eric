@@ -2,6 +2,7 @@ import s from './Feedback.module.scss';
 import Mask from 'components/Animations/Mask';
 import Form from 'pages/Feedback/Form';
 import Fade from 'components/Animations/Fade';
+import { memo } from 'react';
 
 const Feedback = () => {
   return (
@@ -16,4 +17,4 @@ const Feedback = () => {
   );
 };
 
-export default Feedback;
+export default memo(Feedback);

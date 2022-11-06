@@ -1,28 +1,15 @@
-import type { FC, MutableRefObject, ReactNode } from 'react';
+import type { FC } from 'react';
 import s from './Mask.module.scss';
-import { useEffect, useRef } from 'react';
+import { memo, useEffect, useRef } from 'react';
 import gsap, { Expo } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-interface Props {
-  children: ReactNode;
-  config?: Config;
-}
-
-type Config = {
-  delay?: number;
-  duration?: number;
-  start?: string;
-  isScrollTrigger?: boolean;
-  fromTranslateY?: string;
-};
-
-const Mask: FC<Props> = ({ children, config }) => {
+const Mask: FC<any> = ({ children, config }) => {
+  const animation = useRef({});
   const mask = useRef(null);
-  const animation: MutableRefObject<any> = useRef({});
 
   useEffect(() => {
     animation.current = gsap.fromTo(
@@ -56,4 +43,4 @@ const Mask: FC<Props> = ({ children, config }) => {
   );
 };
 
-export default Mask;
+export default memo(Mask);

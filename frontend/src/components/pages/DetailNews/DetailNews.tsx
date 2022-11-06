@@ -3,6 +3,7 @@ import Mask from 'components/Animations/Mask';
 import type { FC } from 'react';
 import Documents from 'pages/DetailNews/Documents';
 import Fade from 'components/Animations/Fade';
+import { memo } from 'react';
 
 const DetailNews: FC<any> = ({ content }) => {
   return (
@@ -34,4 +35,4 @@ const DetailNews: FC<any> = ({ content }) => {
   );
 };
 
-export default DetailNews;
+export default memo(DetailNews);

@@ -2,6 +2,7 @@ import type { FC } from 'react';
 import s from './NotFound.module.scss';
 import Mask from 'components/Animations/Mask';
 import Link from 'next/link';
+import { memo } from 'react';
 
 const NotFound: FC = () => {
   return (
@@ -23,4 +24,4 @@ const NotFound: FC = () => {
   );
 };
 
-export default NotFound;
+export default memo(NotFound);

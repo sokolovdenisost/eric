@@ -1,26 +1,13 @@
-import type { FC, MutableRefObject, ReactNode } from 'react';
+import type { FC } from 'react';
 import s from './Fade.module.scss';
 import gsap, { Expo } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
-import { useEffect, useRef } from 'react';
+import { memo, useEffect, useRef } from 'react';
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-interface Props {
-  children: ReactNode;
-  config?: Config;
-}
-
-type Config = {
-  delay?: number;
-  duration?: number;
-  start?: string;
-  isScrollTrigger?: boolean;
-  fromTranslateY?: string;
-};
-
-const Fade: FC<Props> = ({ children, config }) => {
-  const animation: MutableRefObject<any> = useRef({});
+const Fade: FC<any> = ({ children, config }) => {
+  const animation = useRef({});
   const ref = useRef(null);
 
   useEffect(() => {
@@ -44,6 +31,8 @@ const Fade: FC<Props> = ({ children, config }) => {
         ease: Expo.easeInOut
       }
     );
+
+    return () => animation.current.kill();
   }, []);
 
   return (
@@ -53,4 +42,4 @@ const Fade: FC<Props> = ({ children, config }) => {
   );
 };
 
-export default Fade;
+export default memo(Fade);

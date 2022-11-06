@@ -1,16 +1,9 @@
 import s from './Card.module.scss';
 import Link from 'next/link';
-import { Image } from 'types/home';
-import { FC } from 'react';
+import type { FC } from 'react';
+import { memo } from 'react';
 
-interface Props {
-  title: string;
-  date: string;
-  image: Image;
-  slug: string;
-}
-
-const Card: FC<Props> = ({ title, date, image, slug }) => {
+const Card: FC<any> = ({ title, date, image, slug }) => {
   return (
     <Link href={`/news/${slug}`}>
       <a className={s.root}>
@@ -28,4 +21,4 @@ const Card: FC<Props> = ({ title, date, image, slug }) => {
   );
 };
 
-export default Card;
+export default memo(Card);

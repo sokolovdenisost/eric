@@ -1,11 +1,11 @@
 import type { FC } from 'react';
 import s from './Footer.module.scss';
 import { nav } from 'constants/nav';
-import { NavType } from 'types/nav';
 import classNames from 'classnames';
 import Link from 'next/link';
+import { memo } from 'react';
 
-const getItems = (data: NavType) => (
+const getItems = (data: any) => (
   <li key={data.href} className={s.item}>
     <a href={data.href} className={s.link}>
       {data.title}
@@ -43,4 +43,4 @@ const Footer: FC = () => {
   );
 };
 
-export default Footer;
+export default memo(Footer);

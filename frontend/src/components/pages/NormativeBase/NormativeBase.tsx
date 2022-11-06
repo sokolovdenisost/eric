@@ -1,13 +1,9 @@
 import type { FC } from 'react';
 import s from './NormativeBase.module.scss';
 import Mask from 'components/Animations/Mask';
-import type { Link, NormativeBaseContent } from 'types/normativeBase';
+import { memo } from 'react';
 
-interface Props {
-  content: NormativeBaseContent;
-}
-
-const getItem = (data: Link, idx: number) => (
+const getItem = (data: any, idx: number) => (
   <li key={data.id} className={s.item}>
     <Mask config={{ delay: 1 + idx * 0.25, duration: 1 }} key={idx}>
       <a href={data.link} className={s.link}>
@@ -17,7 +13,7 @@ const getItem = (data: Link, idx: number) => (
   </li>
 );
 
-const NormativeBase: FC<Props> = ({ content }) => {
+const NormativeBase: FC<any> = ({ content }) => {
   return (
     <div className={s.root}>
       <Mask config={{ delay: 0.5 }}>
@@ -30,4 +26,4 @@ const NormativeBase: FC<Props> = ({ content }) => {
   );
 };
 
-export default NormativeBase;
+export default memo(NormativeBase);

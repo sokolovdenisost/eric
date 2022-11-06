@@ -1,4 +1,5 @@
-import { FC } from 'react';
+import type { FC } from 'react';
+import { memo } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 
 const Form: FC<any> = ({ children, submitHandler }) => {
@@ -14,4 +15,4 @@ const Form: FC<any> = ({ children, submitHandler }) => {
   );
 };
 
-export default Form;
+export default memo(Form);

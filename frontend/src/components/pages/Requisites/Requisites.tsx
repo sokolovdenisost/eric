@@ -3,17 +3,13 @@ import s from './Requisites.module.scss';
 import Mask from 'components/Animations/Mask';
 import Item from 'pages/Requisites/Item';
 import Fade from 'components/Animations/Fade';
-import type { Requisite, RequisitesContent } from 'types/requisites';
+import { memo } from 'react';
 
-const getItem = (data: Requisite) => (
+const getItem = (data: any) => (
   <Item key={data.id} title={data.title} description={data.description} />
 );
 
-interface Props {
-  content: RequisitesContent;
-}
-
-const Requisites: FC<Props> = ({ content }) => {
+const Requisites: FC<any> = ({ content }) => {
   return (
     <div className={s.root}>
       <Mask config={{ delay: 0.5 }}>
@@ -27,4 +23,4 @@ const Requisites: FC<Props> = ({ content }) => {
   );
 };
 
-export default Requisites;
+export default memo(Requisites);

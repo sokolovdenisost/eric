@@ -1,13 +1,9 @@
 import type { FC } from 'react';
 import s from './RunningSlide.module.scss';
 import classNames from 'classnames';
-import type { Image, RunningSlideType } from 'types/home';
+import { memo } from 'react';
 
-interface Props {
-  data: RunningSlideType<Image>;
-}
-
-const RunningSlide: FC<Props> = ({ data }) => {
+const RunningSlide: FC<any> = ({ data }) => {
   return (
     <div className={classNames(s.root, s[data.type])}>
       <img src={data.image.url} alt="image" className={s.image} />
@@ -15,4 +11,4 @@ const RunningSlide: FC<Props> = ({ data }) => {
   );
 };
 
-export default RunningSlide;
+export default memo(RunningSlide);

@@ -3,6 +3,7 @@ import s from './News.module.scss';
 import Mask from 'components/Animations/Mask';
 import Card from 'pages/News/Card';
 import Fade from 'components/Animations/Fade';
+import { memo } from 'react';
 
 const News: FC<any> = ({ content }) => {
   const mapNews = content.map((news: any, idx: number) => (
@@ -28,4 +29,4 @@ const News: FC<any> = ({ content }) => {
   );
 };
 
-export default News;
+export default memo(News);

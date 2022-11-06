@@ -3,13 +3,9 @@ import RunningSlider from 'pages/Home/RunningSlider';
 import s from './Home.module.scss';
 import Mask from 'components/Animations/Mask';
 import Fade from 'components/Animations/Fade';
-import { HomeContent } from 'types/home';
+import { memo } from 'react';
 
-interface Props {
-  content: HomeContent;
-}
-
-const Home: FC<Props> = ({ content }) => {
+const Home: FC<any> = ({ content }) => {
   return (
     <div className={s.root}>
       <div className={s.top}>
@@ -29,4 +25,4 @@ const Home: FC<Props> = ({ content }) => {
   );
 };
 
-export default Home;
+export default memo(Home);

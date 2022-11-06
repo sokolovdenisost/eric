@@ -2,13 +2,11 @@ import type { FC } from 'react';
 import s from './Header.module.scss';
 import { nav } from 'constants/nav';
 import classNames from 'classnames';
-import type { NavType } from 'types/nav';
 import Link from 'next/link';
-import { useState } from 'react';
-import Fade from 'components/Animations/Fade';
+import { memo, useState } from 'react';
 import Mask from 'components/Animations/Mask';
 
-const getItem = (data: NavType) => (
+const getItem = (data: any) => (
   <Link key={data.href} href={data.href}>
     <a className={s.link}>{data.title}</a>
   </Link>
@@ -39,4 +37,4 @@ const Header: FC = () => {
   );
 };
 
-export default Header;
+export default memo(Header);

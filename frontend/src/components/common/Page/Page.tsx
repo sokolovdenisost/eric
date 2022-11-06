@@ -1,15 +1,11 @@
-import type { FC, ReactNode } from 'react';
+import type { FC } from 'react';
 import Head from 'next/head';
 import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Mask from 'components/Animations/Mask';
+import { memo } from 'react';
 
-interface Props {
-  title: string;
-  children: ReactNode;
-}
-
-const Page: FC<Props> = ({ title, children }) => {
+const Page: FC<any> = ({ title, children }) => {
   return (
     <>
       <Head>
@@ -25,4 +21,4 @@ const Page: FC<Props> = ({ title, children }) => {
   );
 };
 
-export default Page;
+export default memo(Page);

@@ -1,23 +1,9 @@
 import s from './Documents.module.scss';
 import type { FC } from 'react';
-import Link from 'next/link';
 import Mask from 'components/Animations/Mask';
 import Fade from 'components/Animations/Fade';
-
-const Document: FC<any> = ({ url, name }) => {
-  return (
-    <div className={s.document}>
-      <Link href={url}>
-        <a target="_blank">
-          <div className={s.block}>
-            <p className={s.default}>ЕРИЦ</p>
-          </div>
-          <p className={s.name}>{name}</p>
-        </a>
-      </Link>
-    </div>
-  );
-};
+import { memo } from 'react';
+import Document from './Document';
 
 const Documents: FC<any> = ({ documents }) => {
   return (
@@ -40,4 +26,4 @@ const Documents: FC<any> = ({ documents }) => {
   );
 };
 
-export default Documents;
+export default memo(Documents);
