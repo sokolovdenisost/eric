@@ -6,17 +6,32 @@
   @include f('H3');
 }
 
-.document {
+.documents {
+  display: grid;
   margin-top: size(50);
+  grid-template-columns: size(400) size(400) size(400);
+  grid-gap: size(20);
+}
+
+.document {
   width: size(400);
 }
 
-.image {
+.block {
   width: size(400);
   height: size(250);
   border-radius: size(5);
   border: size(1) solid $black;
-  object-fit: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.default {
+  @include f('H2');
+  color: $white;
+  text-shadow: 1px 0 $black, -1px 0 $black, 0 1px $black, 0 -1px $black,
+    1px 1px $black, -1px -1px $black, 1px -1px $black, -1px 1px $black;
 }
 
 .name {

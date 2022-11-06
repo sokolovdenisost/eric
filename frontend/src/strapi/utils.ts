@@ -4,14 +4,28 @@ import { StrapiData, StrapiImage } from 'types/strapi';
 
 const converter = new showdown.Converter();
 
-export const getSingleFile = (image: StrapiImage) => {
-  if (!image || !image.data) return null;
+export const getSingleFile = (file: StrapiImage) => {
+  if (!file || !file.data) return null;
 
-  const { url } = image.data.attributes;
+  const { url, name } = file.data.attributes;
 
   return {
+    name,
     url: `${config.IMAGE_URL}${url}` || ''
   };
+};
+
+export const getMultiFiles = (files: any[]) => {
+  if (!files) return null;
+
+  return files.map((file: any) => {
+    const { url, name } = file.attributes;
+
+    return {
+      name,
+      url: `${config.IMAGE_URL}${url}` || ''
+    };
+  });
 };
 
 export const getAttributes = <T>(data: StrapiData<T>) => {

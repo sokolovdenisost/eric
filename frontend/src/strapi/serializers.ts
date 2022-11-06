@@ -1,9 +1,11 @@
-import { rebuildList } from './rebuildCollection';
-import { StrapiData } from 'types/strapi';
-import { rebuildHomePage } from 'strapi/rebuildPages';
+import { rebuildList, rebuildNews } from './rebuildCollection';
+import { rebuildHomePage, rebuildNewsDetailsPage } from 'strapi/rebuildPages';
 
-export const serializeList = <T>(data: StrapiData<T>[], type: string) => {
+export const serializeList = (data: any, type: string) => {
   switch (type) {
+    case 'news-detail':
+      return rebuildNews(data);
+      break;
     default:
       return rebuildList(data);
       break;
@@ -13,13 +15,16 @@ export const serializeList = <T>(data: StrapiData<T>[], type: string) => {
 export const serializeSingle = (data: any, type: string) => {
   switch (type) {
     case 'home-page':
-      return rebuildHomePage(data.data);
+      return rebuildHomePage(data);
+      break;
+    case 'news-details':
+      return rebuildNewsDetailsPage(data);
       break;
 
     default:
       return {
-        id: data.data.id,
-        ...data.data.attributes
+        id: data.id,
+        ...data.attributes
       };
       break;
   }

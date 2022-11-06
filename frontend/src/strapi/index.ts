@@ -27,12 +27,12 @@ export const getSingle = async (type: string, params?: any) => {
     withToken: true
   });
 
-  return serializeSingle(document.data, type);
+  return serializeSingle(document.data.data, type);
 };
 
 export const getSingleBySlug = async (
   type: string,
-  slug: string,
+  slug: string | string[] | undefined,
   populate: string
 ) => {
   const document = await req.GET({

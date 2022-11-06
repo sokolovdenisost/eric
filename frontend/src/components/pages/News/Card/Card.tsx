@@ -1,21 +1,28 @@
 import s from './Card.module.scss';
 import Link from 'next/link';
+import { Image } from 'types/home';
+import { FC } from 'react';
 
-const Card = () => {
+interface Props {
+  title: string;
+  date: string;
+  image: Image;
+  slug: string;
+}
+
+const Card: FC<Props> = ({ title, date, image, slug }) => {
   return (
-    <Link href="/news/1">
+    <Link href={`/news/${slug}`}>
       <a className={s.root}>
         <div className={s.block}>
-          <img
-            className={s.img}
-            src="https://images.unsplash.com/photo-1662581871665-f299ba8ace07?ixlib=rb-4.0.3&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=986&q=80"
-            alt="news"
-          />
+          {!!image?.url ? (
+            <img className={s.img} src={image?.url} alt="news" />
+          ) : (
+            <p className={s.default}>ЕРИЦ</p>
+          )}
         </div>
-        <h4 className={s.title}>
-          Повышение тарифов по ООО Газпром теплоэнерго Тверь
-        </h4>
-        <p className={s.date}>22 августа 2022</p>
+        <h4 className={s.title}>{title}</h4>
+        <p className={s.date}>{date}</p>
       </a>
     </Link>
   );

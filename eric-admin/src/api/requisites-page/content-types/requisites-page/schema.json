@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "requisites_pages",
+  "info": {
+    "singularName": "requisites-page",
+    "pluralName": "requisites-pages",
+    "displayName": "RequisitesPage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "requisites": {
+      "displayName": "Requisites",
+      "type": "component",
+      "repeatable": true,
+      "component": "requisite.requisites"
+    }
+  }
+}

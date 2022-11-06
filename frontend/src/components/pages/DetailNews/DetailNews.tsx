@@ -4,27 +4,32 @@ import type { FC } from 'react';
 import Documents from 'pages/DetailNews/Documents';
 import Fade from 'components/Animations/Fade';
 
-const DetailNews: FC = () => {
+const DetailNews: FC<any> = ({ content }) => {
   return (
     <div className={s.root}>
       <div className={s.top}>
         <Mask config={{ delay: 0.5 }}>
-          <h2 className={s.title}>Новость</h2>
+          <h2 className={s.title}>{content.title}</h2>
         </Mask>
         <Mask config={{ delay: 0.75 }}>
           <p className={s.datePublish}>
-            Дата публикации: <span className={s.date}>22 августа 2022</span>
+            Дата публикации: <span className={s.date}>{content.date}</span>
           </p>
         </Mask>
       </div>
 
       <div className={s.body}>
-        <Fade config={{ delay: 1 }}>
-          <p>Повышение тарифов по ООО Газпром теплоэнерго Тверь</p>
+        <Fade config={{ delay: 1, fromTranslateY: '10%' }}>
+          <div
+            className={s.html}
+            dangerouslySetInnerHTML={{ __html: content.description }}
+          />
         </Fade>
       </div>
 
-      <Documents />
+      {content?.documents?.length && (
+        <Documents documents={content?.documents} />
+      )}
     </div>
   );
 };

@@ -1,0 +1,9 @@
+'use strict';
+
+/**
+ * news-detail router
+ */
+
+const { createCoreRouter } = require('@strapi/strapi').factories;
+
+module.exports = createCoreRouter('api::news-detail.news-detail');

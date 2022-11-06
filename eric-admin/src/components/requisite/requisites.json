@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_requisite_requisites",
+  "info": {
+    "displayName": "Requisites"
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "text",
+      "required": true
+    },
+    "description": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

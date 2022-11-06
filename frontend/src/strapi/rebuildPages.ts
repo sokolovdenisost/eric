@@ -1,6 +1,4 @@
-import { RunningSlide } from 'types/home';
-import { getSingleFile } from 'strapi/utils';
-import { StrapiImage } from 'types/strapi';
+import { getHtml, getMultiFiles, getSingleFile } from 'strapi/utils';
 
 export const rebuildHomePage = (data: any) => {
   const { id, attributes: at } = data;
@@ -8,9 +6,20 @@ export const rebuildHomePage = (data: any) => {
   return {
     id,
     ...at,
-    runningSlider: at.runningSlider.map((slide: RunningSlide<StrapiImage>) => ({
+    runningSlider: at.runningSlider.map((slide: any) => ({
       ...slide,
       image: getSingleFile(slide.image)
     }))
+  };
+};
+
+export const rebuildNewsDetailsPage = (data: any) => {
+  const { id, attributes: at } = data;
+
+  return {
+    id,
+    ...at,
+    description: getHtml(at.description),
+    documents: getMultiFiles(at.documents.data)
   };
 };

@@ -1,0 +1,21 @@
+{
+  "kind": "singleType",
+  "collectionName": "normative_base_pages",
+  "info": {
+    "singularName": "normative-base-page",
+    "pluralName": "normative-base-pages",
+    "displayName": "NormativeBasePage"
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "links": {
+      "displayName": "Links",
+      "type": "component",
+      "repeatable": true,
+      "component": "normative-base.links"
+    }
+  }
+}

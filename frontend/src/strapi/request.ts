@@ -26,8 +26,6 @@ const sidedRequest = (opts: any) => {
     headers.authorization = `bearer ${config.TOKEN}`;
   }
 
-  console.log({ baseURL: `${config.API_URL}`, headers, ...opts });
-
   return axios({ baseURL: `${config.API_URL}`, headers, ...opts });
 };
 

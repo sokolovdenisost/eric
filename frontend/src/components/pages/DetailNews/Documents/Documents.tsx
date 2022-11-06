@@ -4,27 +4,22 @@ import Link from 'next/link';
 import Mask from 'components/Animations/Mask';
 import Fade from 'components/Animations/Fade';
 
-const Document: FC = () => {
+const Document: FC<any> = ({ url, name }) => {
   return (
     <div className={s.document}>
-      <Link href="/">
-        <a>
-          <img
-            src="https://data.unhcr.org/images/documents/big_4cda85d892a5c0b5dd63b510a9c83e9c9d06e739.jpg"
-            alt="document"
-            className={s.image}
-          />
-          <p className={s.name}>
-            Главное управление “Региональная энергетическая комиссия” Тверской
-            области
-          </p>
+      <Link href={url}>
+        <a target="_blank">
+          <div className={s.block}>
+            <p className={s.default}>ЕРИЦ</p>
+          </div>
+          <p className={s.name}>{name}</p>
         </a>
       </Link>
     </div>
   );
 };
 
-const Documents: FC = () => {
+const Documents: FC<any> = ({ documents }) => {
   return (
     <div className={s.root}>
       <Mask config={{ delay: 1.25 }}>
@@ -32,9 +27,14 @@ const Documents: FC = () => {
       </Mask>
 
       <div className={s.documents}>
-        <Fade config={{ delay: 1.5, fromTranslateY: '20%' }}>
-          <Document />
-        </Fade>
+        {documents.map((document: any, idx: number) => (
+          <Fade
+            key={document.id}
+            config={{ delay: 1.5 + 0.25 * idx, fromTranslateY: '20%' }}
+          >
+            <Document {...document} />
+          </Fade>
+        ))}
       </div>
     </div>
   );
