@@ -3,42 +3,82 @@
 .root {
   height: 100%;
   width: calc(100% + size(20));
+
+  @include mobile {
+    width: calc(100% + size(10));
+  }
 }
 
 .image {
   height: 100%;
   width: calc(100% - size(20));
   object-fit: cover;
+
+  @include mobile {
+    width: calc(100% - size(10));
+  }
 }
 
 .root.BIG_SQUARE {
   min-width: size(620);
 
-  .image {
-    border-radius: size(40);
+  @include mobile {
+    min-width: size(310);
+  }
+}
+
+.root.BIG_SQUARE .image {
+  border-radius: size(40);
+
+  @include mobile {
+    border-radius: size(20);
   }
 }
 
 .root.SMALL_SQUARE {
   min-width: size(320);
+
+  @include mobile {
+    min-width: size(160);
+  }
 }
 
 .root.SMALL_SQUARE .image {
   border-radius: size(40);
+
+  @include mobile {
+    border-radius: size(20);
+  }
 }
 
 .root.BIG_OVAL {
   min-width: size(620);
+
+  @include mobile {
+    min-width: size(310);
+  }
 }
 
 .root.BIG_OVAL .image {
   border-radius: size(200);
+
+  @include mobile {
+    border-radius: size(100);
+  }
 }
 
 .root.SMALL_OVAL {
   min-width: size(320);
+
+  @include mobile {
+    min-width: size(160);
+  }
 }
 
 .root.SMALL_OVAL .image {
   border-radius: size(200);
+
+  @include mobile {
+    border-radius: size(100);
+  }
 }

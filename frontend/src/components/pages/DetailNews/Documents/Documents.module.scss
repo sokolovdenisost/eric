@@ -4,6 +4,10 @@
 
 .title {
   @include f('H3');
+
+  @include mobile {
+    @include f('m/h3');
+  }
 }
 
 .documents {
@@ -11,4 +15,9 @@
   margin-top: size(50);
   grid-template-columns: size(400) size(400) size(400);
   grid-gap: size(20);
+
+  @include mobile {
+    margin-top: size(25);
+    grid-template-columns: size(320);
+  }
 }

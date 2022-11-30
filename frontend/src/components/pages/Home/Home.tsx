@@ -33,7 +33,9 @@ const Home: FC<IHome> = ({ content }) => {
         <RunningSlider data={content.runningSlider} />
       </Fade>
       <Contacts data={content.contacts} />
-      <Slider about={content.about} />
+      <Fade config={{ duration: 2, fromTranslateY: '25%', isScrollTrigger: true }}>
+        <Slider about={content.about} />
+      </Fade>
     </div>
   );
 };

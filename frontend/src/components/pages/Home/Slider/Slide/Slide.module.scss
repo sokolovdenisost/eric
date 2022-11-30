@@ -8,32 +8,64 @@
   justify-content: center;
   color: $white;
   margin: 0 size(232.5);
+
+  @include mobile {
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: initial;
+    margin: 0;
+  }
 }
 
 .image {
   width: size(375);
   height: size(500);
   object-fit: cover;
+
+  @include mobile {
+    width: size(320);
+    height: size(320);
+    margin: size(50) size(20) size(20);
+  }
 }
 
 .body {
   width: size(500);
   margin-left: size(100);
+
+  @include mobile {
+    margin: 0 size(20);
+    width: size(320);
+  }
 }
 
 .title {
   @include f('H3');
   margin-bottom: size(20);
+
+  @include mobile {
+    @include f('m/h2');
+    margin-bottom: size(10);
+  }
 }
 
 .description {
   @include f('normal');
+
+  @include mobile {
+    @include f('m/normal');
+  }
 }
 
 .arrows {
   display: flex;
   align-items: center;
+  justify-content: center;
   margin-bottom: size(40);
+
+  @include mobile {
+    margin-bottom: size(20);
+  }
 }
 
 .arrowLeft,

@@ -1340,6 +1340,11 @@
   resolved "https://registry.npmjs.org/@types/scheduler/-/scheduler-0.16.2.tgz"
   integrity sha512-hppQEBDmlwhFAXKJX2KnWLYu5yMfi91yazPb2l+lbJiwW+wdo1gNeRA+3RgNSO39WYX2euey41KEwnqesU2Jew==
 
+"@types/sendmail@^1.4.4":
+  version "1.4.4"
+  resolved "https://registry.yarnpkg.com/@types/sendmail/-/sendmail-1.4.4.tgz#284309d991300d4d9f27bd90238dbc29e2684dc4"
+  integrity sha512-tSr6Y2LFKTp4TD6p/B6sSIXBf8RaIjuQhRpXFy8GxwihC0P1lfzf26C4Pvb6dCdVZu12YVOCeHG3wEx15da/Rg==
+
 "@types/showdown@^2.0.0":
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/@types/showdown/-/showdown-2.0.0.tgz#3e800eca8573848cac4e5555f4377ba3a0e7b1f2"

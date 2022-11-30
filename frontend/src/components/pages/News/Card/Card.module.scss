@@ -5,6 +5,10 @@
 .root {
   display: block;
   width: size(430);
+
+  @include mobile {
+    width: 100%;
+  }
 }
 
 .block {
@@ -15,6 +19,10 @@
   height: size(300);
   border-radius: size(5);
   border: size(1) solid $black;
+
+  @include mobile {
+    height: size(250);
+  }
 }
 
 .default {
@@ -39,9 +47,17 @@
   @include f('H4');
   color: $black;
   margin: size(10) 0;
+
+  @include mobile {
+    @include f('m/h3');
+  }
 }
 
 .date {
   @include f('normal');
   color: $gray;
+
+  @include mobile {
+    @include f('m/h4');
+  }
 }

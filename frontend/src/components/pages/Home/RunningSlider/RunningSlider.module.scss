@@ -5,4 +5,9 @@
   height: size(400);
   margin: size(50) 0 size(100);
   overflow: hidden;
+
+  @include mobile {
+    height: size(200);
+    margin: size(25) 0 size(50);
+  }
 }

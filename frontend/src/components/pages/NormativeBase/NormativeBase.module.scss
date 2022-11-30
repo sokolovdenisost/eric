@@ -4,6 +4,10 @@
 
 .root {
   margin: size(135) 0 size(90);
+
+  @include mobile {
+    margin: size(60) 0 size(30);
+  }
 }
 
 .title {
@@ -12,15 +16,29 @@
   text-align: center;
   width: size(915);
   margin: 0 auto;
+
+  @include mobile {
+    width: 100%;
+    @include f('m/h1');
+  }
 }
 
 .links {
   margin: size(100) size(50);
+
+  @include mobile {
+    margin: size(50) size(20);
+  }
 }
 
 .item {
   @include f('H4');
   margin-bottom: size(50);
+
+  @include mobile {
+    @include f('m/h4');
+    margin-bottom: size(25);
+  }
 }
 
 .item:last-child {

@@ -4,6 +4,10 @@
 
 .root {
   margin: size(135) 0 size(90);
+
+  @include mobile {
+    margin: size(60) 0 size(30);
+  }
 }
 
 .top {
@@ -16,6 +20,11 @@
   text-align: center;
   width: size(915);
   margin: 0 auto;
+
+  @include mobile {
+    width: 100%;
+    @include f('m/h2');
+  }
 }
 
 .description {
@@ -24,4 +33,11 @@
   top: size(-44);
   @include f('H3 Italic');
   color: $opal;
+
+  @include mobile {
+    right: size(10);
+    top: size(-23);
+    width: fit-content;
+    @include f('m/h3 italic');
+  }
 }

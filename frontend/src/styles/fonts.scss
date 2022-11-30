@@ -52,6 +52,11 @@ $markscript: 'Marck Script', cursive;
     font-weight: 400;
     font-size: size(18);
     line-height: 115%;
+  } @else if $type == 'm/h3 italic' {
+    font-family: $markscript;
+    font-weight: 400;
+    font-size: size(22);
+    line-height: 115%;
   } @else if $type == 'm/normal' {
     font-family: $oranienbaum;
     font-weight: 400;

@@ -7,6 +7,12 @@
   margin: 0 size(95);
   grid-template-columns: repeat(2, 1fr);
   grid-gap: size(50);
+
+  @include mobile {
+    margin: 0 size(20);
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: size(20);
+  }
 }
 
 .contact {
@@ -18,11 +24,21 @@
   padding: 0 size(100);
   height: size(200);
   border: 1px solid $opal;
+
+  @include mobile {
+    width: size(320);
+    padding: 0 size(25);
+    height: size(150);
+  }
 }
 
 .title {
   @include f('H3');
   text-align: center;
+
+  @include mobile {
+    @include f('m/h3');
+  }
 }
 
 .description {
@@ -30,4 +46,9 @@
   width: size(400);
   margin-top: size(10);
   text-align: center;
+
+  @include mobile {
+    width: 100%;
+    @include f('m/normal');
+  }
 }

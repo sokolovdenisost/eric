@@ -4,21 +4,39 @@
 
 .root {
   margin: size(135) size(50);
+
+  @include mobile {
+    margin: size(60) size(20);
+  }
 }
 
 .top {
   display: flex;
   align-items: center;
   justify-content: space-between;
+
+  @include mobile {
+    align-items: flex-start;
+    flex-direction: column;
+  }
 }
 
 .title {
   @include f('H2');
+
+  @include mobile {
+    @include f('m/h2');
+  }
 }
 
 .datePublish {
   @include f('normal');
   color: $gray;
+
+  @include mobile {
+    @include f('m/normal');
+    margin-top: size(5);
+  }
 }
 
 .date {
@@ -63,5 +81,37 @@
 
   li {
     @include f('normal');
+  }
+
+  @include mobile {
+    h1 {
+      @include f('m/h1');
+      margin-bottom: size(10);
+    }
+
+    h2 {
+      @include f('m/h2');
+      margin-bottom: size(10);
+    }
+
+    h3 {
+      @include f('m/h3');
+      margin-bottom: size(10);
+    }
+
+    h4,
+    h5,
+    h6 {
+      @include f('m/h4');
+      margin-bottom: size(10);
+    }
+
+    p {
+      @include f('m/normal');
+    }
+
+    li {
+      @include f('m/normal');
+    }
   }
 }

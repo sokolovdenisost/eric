@@ -4,6 +4,10 @@
 
 .document {
   width: size(400);
+
+  @include mobile {
+    width: size(320);
+  }
 }
 
 .block {
@@ -14,6 +18,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include mobile {
+    width: size(320);
+    height: size(200);
+  }
 }
 
 .default {
@@ -27,4 +36,8 @@
   @include f('normal');
   margin-top: size(5);
   color: $black;
+
+  @include mobile {
+    @include f('m/normal');
+  }
 }

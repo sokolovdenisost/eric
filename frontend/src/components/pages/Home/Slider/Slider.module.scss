@@ -8,4 +8,11 @@
   display: flex;
   overflow: hidden;
   transition: margin 1s ease;
+
+  @include mobile {
+    margin: size(50) 0;
+    height: auto;
+    padding-bottom: size(50);
+    transition-duration: .5s;
+  }
 }
