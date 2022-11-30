@@ -1,10 +1,15 @@
 import type { NextPage } from 'next';
 import Page from 'components/Page';
 import News from 'pages/News';
-import { GetStaticPaths, GetStaticProps } from 'next';
-import { getAllPath, getCollection } from 'strapi/index';
+import { GetStaticProps } from 'next';
+import { getCollection } from 'strapi/index';
+import { TNews } from 'types/news';
 
-const NewsPage: NextPage<any> = ({ content }) => (
+interface INews {
+  content: TNews[];
+}
+
+const NewsPage: NextPage<INews> = ({ content }) => (
   <Page title="Новости">
     <News content={content} />
   </Page>

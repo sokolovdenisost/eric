@@ -2,9 +2,14 @@ import type { NextPage } from 'next';
 import Page from 'components/Page';
 import DetailNews from 'pages/DetailNews';
 import { GetStaticPaths, GetStaticProps } from 'next';
-import { getAllPath, getCollection, getSingleBySlug } from 'strapi/index';
+import { getAllPath, getSingleBySlug } from 'strapi/index';
+import { TDetailNews, TNews } from 'types/news';
 
-const DetailNewsPage: NextPage<any> = ({ content }) => (
+interface IDetailNews {
+  content: TDetailNews;
+}
+
+const DetailNewsPage: NextPage<IDetailNews> = ({ content }) => (
   <Page title="Новость">
     <DetailNews content={content} />
   </Page>
@@ -13,7 +18,7 @@ const DetailNewsPage: NextPage<any> = ({ content }) => (
 export const getStaticPaths: GetStaticPaths = async () => {
   const news = await getAllPath('news-details');
 
-  const paths = news.map((n: any) => ({ params: { slug: n.slug } }));
+  const paths = news.map((n: TNews) => ({ params: { slug: n.slug } }));
 
   return {
     paths,

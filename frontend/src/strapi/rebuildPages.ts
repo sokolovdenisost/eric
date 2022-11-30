@@ -9,6 +9,11 @@ export const rebuildHomePage = (data: any) => {
     runningSlider: at.runningSlider.map((slide: any) => ({
       ...slide,
       image: getSingleFile(slide.image)
+    })),
+    about: at.about.map((a: any) => ({
+      ...a,
+      description: getHtml(a.description),
+      image: getSingleFile(a.image)
     }))
   };
 };

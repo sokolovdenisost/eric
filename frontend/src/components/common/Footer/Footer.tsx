@@ -1,11 +1,11 @@
 import type { FC } from 'react';
 import s from './Footer.module.scss';
-import { nav } from 'constants/nav';
+import { nav, NavType } from 'constants/nav';
 import classNames from 'classnames';
 import Link from 'next/link';
 import { memo } from 'react';
 
-const getItems = (data: any) => (
+const getItems = (data: NavType) => (
   <li key={data.href} className={s.item}>
     <a href={data.href} className={s.link}>
       {data.title}

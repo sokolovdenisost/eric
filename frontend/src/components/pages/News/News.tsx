@@ -4,20 +4,27 @@ import Mask from 'components/Animations/Mask';
 import Card from 'pages/News/Card';
 import Fade from 'components/Animations/Fade';
 import { memo } from 'react';
+import { TNews } from 'types/news';
 
-const News: FC<any> = ({ content }) => {
-  const mapNews = content.map((news: any, idx: number) => (
-    <Fade
-      key={idx}
-      config={{
-        delay: 1 + idx * 0.25,
-        duration: 1,
-        fromTranslateY: '25%'
-      }}
-    >
-      <Card {...news} />
-    </Fade>
-  ));
+const getNews = (news: TNews, idx: number) => (
+  <Fade
+    key={idx}
+    config={{
+      delay: 1 + idx * 0.25,
+      duration: 1,
+      fromTranslateY: '25%'
+    }}
+  >
+    <Card {...news} />
+  </Fade>
+);
+
+interface INews {
+  content: TNews[];
+}
+
+const News: FC<INews> = ({ content }) => {
+  const mapNews = content.map(getNews);
 
   return (
     <div className={s.root}>

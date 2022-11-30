@@ -1,12 +1,26 @@
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 import s from './Fade.module.scss';
 import gsap, { Expo } from 'gsap';
 import ScrollTrigger from 'gsap/dist/ScrollTrigger';
 import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
 import { memo, useEffect, useRef } from 'react';
+
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-const Fade: FC<any> = ({ children, config }) => {
+interface IFade {
+  children: ReactNode;
+  config: TConfig;
+}
+
+type TConfig = {
+  fromTranslateY?: string;
+  isScrollTrigger?: boolean;
+  start?: string;
+  duration?: number;
+  delay?: number;
+};
+
+const Fade: FC<IFade> = ({ children, config }) => {
   const animation = useRef({});
   const ref = useRef(null);
 

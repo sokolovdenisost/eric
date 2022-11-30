@@ -1,0 +1,56 @@
+@import 'styles/mixins.scss';
+@import 'styles/colors.scss';
+@import 'styles/fonts.scss';
+
+.root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: $white;
+  margin: 0 size(232.5);
+}
+
+.image {
+  width: size(375);
+  height: size(500);
+  object-fit: cover;
+}
+
+.body {
+  width: size(500);
+  margin-left: size(100);
+}
+
+.title {
+  @include f('H3');
+  margin-bottom: size(20);
+}
+
+.description {
+  @include f('normal');
+}
+
+.arrows {
+  display: flex;
+  align-items: center;
+  margin-bottom: size(40);
+}
+
+.arrowLeft,
+.arrowRight {
+  width: size(48);
+  height: size(48);
+}
+
+.arrowRight {
+  transform: scale(-1, 1);
+}
+
+.number {
+  margin: 0 size(20);
+  @include f('H4');
+}
+
+.disabled {
+  opacity: 0.5;
+}

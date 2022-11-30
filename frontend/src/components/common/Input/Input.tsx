@@ -1,9 +1,16 @@
 import s from './Input.module.scss';
 import { FC, memo } from 'react';
 import classNames from 'classnames';
-import { useFormContext } from 'react-hook-form';
+import { FieldValues, useFormContext } from 'react-hook-form';
 
-const Input: FC<any> = ({ placeholder, isRequired, name, config }) => {
+interface IInput {
+  placeholder: string;
+  isRequired: boolean;
+  name: string;
+  config: FieldValues;
+}
+
+const Input: FC<IInput> = ({ placeholder, isRequired, name, config }) => {
   const {
     register,
     formState: { errors }

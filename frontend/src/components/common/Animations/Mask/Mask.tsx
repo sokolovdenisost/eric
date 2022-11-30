@@ -1,4 +1,4 @@
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 import s from './Mask.module.scss';
 import { memo, useEffect, useRef } from 'react';
 import gsap, { Expo } from 'gsap';
@@ -7,7 +7,20 @@ import ScrollToPlugin from 'gsap/dist/ScrollToPlugin';
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-const Mask: FC<any> = ({ children, config }) => {
+interface IMask {
+  children: ReactNode;
+  config: TConfig;
+}
+
+type TConfig = {
+  fromTranslateY?: string;
+  isScrollTrigger?: boolean;
+  start?: string;
+  duration?: number;
+  delay?: number;
+};
+
+const Mask: FC<IMask> = ({ children, config }) => {
   const animation = useRef({});
   const mask = useRef(null);
 

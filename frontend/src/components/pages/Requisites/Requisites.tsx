@@ -4,12 +4,24 @@ import Mask from 'components/Animations/Mask';
 import Item from 'pages/Requisites/Item';
 import Fade from 'components/Animations/Fade';
 import { memo } from 'react';
+import type { TRequisite } from 'types/requisites';
 
-const getItem = (data: any) => (
-  <Item key={data.id} title={data.title} description={data.description} />
+const getItem = (data: TRequisite) => (
+  <Item
+    key={data.id}
+    id={data.id}
+    title={data.title}
+    description={data.description}
+  />
 );
 
-const Requisites: FC<any> = ({ content }) => {
+interface IRequisites {
+  content: {
+    requisites: TRequisite[];
+  };
+}
+
+const Requisites: FC<IRequisites> = ({ content }) => {
   return (
     <div className={s.root}>
       <Mask config={{ delay: 0.5 }}>

@@ -2,8 +2,9 @@ import s from './Card.module.scss';
 import Link from 'next/link';
 import type { FC } from 'react';
 import { memo } from 'react';
+import { TNews } from 'types/news';
 
-const Card: FC<any> = ({ title, date, image, slug }) => {
+const Card: FC<TNews> = ({ title, date, image, slug }) => {
   return (
     <Link href={`/news/${slug}`}>
       <a className={s.root}>

@@ -1,8 +1,13 @@
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 import { memo } from 'react';
 import { FormProvider, useForm } from 'react-hook-form';
 
-const Form: FC<any> = ({ children, submitHandler }) => {
+interface IFrom {
+  children: ReactNode;
+  submitHandler: <T>(data: T) => void;
+}
+
+const Form: FC<IFrom> = ({ children, submitHandler }) => {
   const methods = useForm();
   const { handleSubmit } = methods;
 

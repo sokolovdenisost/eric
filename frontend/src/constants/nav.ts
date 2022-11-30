@@ -1,4 +1,7 @@
-import { NavType } from 'types/nav';
+export interface NavType {
+  title: string;
+  href: string;
+}
 
 export const nav: NavType[] = [
   {

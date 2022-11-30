@@ -1,15 +1,24 @@
 import s from './Button.module.scss';
 import classNames from 'classnames';
-import type { FC } from 'react';
+import type { FC, ReactNode } from 'react';
 import { memo } from 'react';
 
-const Button: FC<any> = ({ type, theme, children, className }) => {
+type TButton = 'submit' | 'button';
+
+interface IButton {
+  type: TButton;
+  theme: string[];
+  children: ReactNode;
+  className?: string;
+}
+
+const Button: FC<IButton> = ({ type, theme, children, className }) => {
   return (
     <button
       type={type}
       className={classNames(
         s.button,
-        ...theme.map((t: any) => s[t]),
+        ...theme.map((t: string) => s[t]),
         className
       )}
     >

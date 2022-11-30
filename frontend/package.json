@@ -19,9 +19,11 @@
     "react-dom": "18.2.0",
     "react-hook-form": "^7.38.0",
     "sass": "^1.55.0",
+    "sendmail": "^1.6.1",
     "showdown": "^2.1.0"
   },
   "devDependencies": {
+    "@svgr/webpack": "^6.5.1",
     "@types/node": "18.11.3",
     "@types/qs": "^6.9.7",
     "@types/react": "18.0.21",

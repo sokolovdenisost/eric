@@ -2,13 +2,15 @@ import type { GetStaticProps, NextPage } from 'next';
 import Page from 'components/Page';
 import NormativeBase from 'pages/NormativeBase';
 import { getSingle } from 'strapi/index';
-import { NormativeBaseContent } from 'types/normativeBase';
+import type { TNormativeBase } from 'types/normative-base';
 
-interface Props {
-  content: NormativeBaseContent;
+interface INormativeBase {
+  content: {
+    links: TNormativeBase[];
+  };
 }
 
-const NormativeBasePage: NextPage<Props> = ({ content }) => (
+const NormativeBasePage: NextPage<INormativeBase> = ({ content }) => (
   <Page title="Нормативно-правовая база">
     <NormativeBase content={content} />
   </Page>

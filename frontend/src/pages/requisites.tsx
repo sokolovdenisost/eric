@@ -2,10 +2,12 @@ import type { NextPage, GetStaticProps } from 'next';
 import Page from 'components/Page';
 import Requisites from 'pages/Requisites';
 import { getSingle } from 'strapi/index';
-import type { RequisitesContent } from 'types/requisites';
+import type { TRequisite } from 'types/requisites';
 
 interface Props {
-  content: RequisitesContent;
+  content: {
+    requisites: TRequisite[];
+  };
 }
 
 const RequisitesPage: NextPage<Props> = ({ content }) => (

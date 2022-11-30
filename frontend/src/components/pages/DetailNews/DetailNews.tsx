@@ -4,8 +4,13 @@ import type { FC } from 'react';
 import Documents from 'pages/DetailNews/Documents';
 import Fade from 'components/Animations/Fade';
 import { memo } from 'react';
+import { TDetailNews } from 'types/news';
 
-const DetailNews: FC<any> = ({ content }) => {
+interface IDetailNews {
+  content: TDetailNews;
+}
+
+const DetailNews: FC<IDetailNews> = ({ content }) => {
   return (
     <div className={s.root}>
       <div className={s.top}>
@@ -23,7 +28,7 @@ const DetailNews: FC<any> = ({ content }) => {
         <Fade config={{ delay: 1, fromTranslateY: '10%' }}>
           <div
             className={s.html}
-            dangerouslySetInnerHTML={{ __html: content.description }}
+            dangerouslySetInnerHTML={{ __html: content.description || '' }}
           />
         </Fade>
       </div>

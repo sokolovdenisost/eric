@@ -1,0 +1,11 @@
+@import 'styles/mixins.scss';
+@import 'styles/colors.scss';
+
+.root {
+  margin: size(100) 0;
+  height: size(700);
+  background-color: $black;
+  display: flex;
+  overflow: hidden;
+  transition: margin 1s ease;
+}

@@ -1,12 +1,12 @@
 import type { FC } from 'react';
 import s from './Header.module.scss';
-import { nav } from 'constants/nav';
+import { nav, NavType } from 'constants/nav';
 import classNames from 'classnames';
 import Link from 'next/link';
 import { memo, useState } from 'react';
 import Mask from 'components/Animations/Mask';
 
-const getItem = (data: any) => (
+const getItem = (data: NavType) => (
   <Link key={data.href} href={data.href}>
     <a className={s.link}>{data.title}</a>
   </Link>
