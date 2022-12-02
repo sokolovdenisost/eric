@@ -21,7 +21,7 @@ type TConfig = {
 };
 
 const Mask: FC<IMask> = ({ children, config }) => {
-  const animation = useRef({});
+  const animation: any = useRef(null);
   const mask = useRef(null);
 
   useEffect(() => {

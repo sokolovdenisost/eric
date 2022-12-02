@@ -5,9 +5,9 @@ import { FieldValues, useFormContext } from 'react-hook-form';
 
 interface IInput {
   placeholder: string;
-  isRequired: boolean;
+  isRequired?: boolean;
   name: string;
-  config: FieldValues;
+  config?: FieldValues;
 }
 
 const Input: FC<IInput> = ({ placeholder, isRequired, name, config }) => {

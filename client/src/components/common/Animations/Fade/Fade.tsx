@@ -21,7 +21,7 @@ type TConfig = {
 };
 
 const Fade: FC<IFade> = ({ children, config }) => {
-  const animation = useRef({});
+  const animation: any = useRef(null);
   const ref = useRef(null);
 
   useEffect(() => {

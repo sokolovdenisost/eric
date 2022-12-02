@@ -1,10 +1,9 @@
 import showdown from 'showdown';
 import config from './config';
-import { StrapiData, StrapiImage } from 'types/strapi';
 
 const converter = new showdown.Converter();
 
-export const getSingleFile = (file: StrapiImage) => {
+export const getSingleFile = (file: any) => {
   if (!file || !file.data) return null;
 
   const { url, name } = file.data.attributes;
@@ -28,7 +27,7 @@ export const getMultiFiles = (files: any[]) => {
   });
 };
 
-export const getAttributes = <T>(data: StrapiData<T>) => {
+export const getAttributes = (data: any) => {
   if (!data.data) return null;
 
   const item = data.data;

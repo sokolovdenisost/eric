@@ -22,6 +22,7 @@ const Slider: FC<Props> = ({ about }) => {
 
   const mapSlides = about.map((data: TSlide, idx: number) => (
     <Slide
+      key={idx}
       currentSlide={currentSlide}
       slideNumber={idx}
       data={data}
