@@ -39,7 +39,7 @@ export const getAttributes = (data: any) => {
 };
 
 export const getHtml = (data: string) => {
-  const text = String(data);
+  const text = String(data || '');
 
   return text ? converter.makeHtml(text) : null;
 };
