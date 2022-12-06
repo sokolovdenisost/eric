@@ -1,4 +1,4 @@
-import { getHtml, getSingleFile } from './utils';
+import { getSingleFile } from './utils';
 
 export const rebuildList = (data: any) => {
   return data.map((item: any) => {

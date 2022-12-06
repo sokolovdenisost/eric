@@ -11,6 +11,7 @@
   "dependencies": {
     "axios": "0.27.2",
     "classnames": "^2.3.2",
+    "date-fns": "^2.29.3",
     "dayjs": "^1.11.6",
     "gsap": "^3.11.3",
     "next": "12.3.1",

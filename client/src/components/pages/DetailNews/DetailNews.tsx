@@ -5,6 +5,7 @@ import Documents from 'pages/DetailNews/Documents';
 import Fade from 'components/Animations/Fade';
 import { memo } from 'react';
 import { TDetailNews } from 'types/news';
+import { formatDate } from 'utils/formatDate';
 
 interface IDetailNews {
   content: TDetailNews;
@@ -19,7 +20,8 @@ const DetailNews: FC<IDetailNews> = ({ content }) => {
         </Mask>
         <Mask config={{ delay: 0.75 }}>
           <p className={s.datePublish}>
-            Дата публикации: <span className={s.date}>{content.date}</span>
+            Дата публикации:{' '}
+            <span className={s.date}>{formatDate(content.date ?? '')}</span>
           </p>
         </Mask>
       </div>

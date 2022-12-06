@@ -3,6 +3,8 @@ import Link from 'next/link';
 import type { FC } from 'react';
 import { memo } from 'react';
 import { TNews } from 'types/news';
+import { format } from 'date-fns';
+import { formatDate } from 'utils/formatDate';
 
 const Card: FC<TNews> = ({ title, date, image, slug }) => {
   return (
@@ -16,7 +18,7 @@ const Card: FC<TNews> = ({ title, date, image, slug }) => {
           )}
         </div>
         <h4 className={s.title}>{title}</h4>
-        <p className={s.date}>{date}</p>
+        <p className={s.date}>{formatDate(date ?? '')}</p>
       </a>
     </Link>
   );
