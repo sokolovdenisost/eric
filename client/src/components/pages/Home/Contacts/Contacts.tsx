@@ -14,7 +14,7 @@ interface Props {
   data: TContact[];
 }
 
-const getContacts = (data: TContact, idx: number) => (
+const getContacts = (data: TContact) => (
   <Contact title={data.title} description={data.description} />
 );
 

@@ -17,7 +17,7 @@ export default async function handler(
     mailer(
       {
         from: 'no-reply@ooo-eric.ru',
-        to: 'denis.sokolov@saltpepper.ru',
+        to: process.env.MAIL || '',
         subject: 'Обратная связь',
         html: getHtml(req.body)
       },

@@ -1,5 +1,8 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  env: {
+    MAIL: process.env.MAIL || ''
+  },
   reactStrictMode: true,
   swcMinify: true,
   webpack: (config) => {
