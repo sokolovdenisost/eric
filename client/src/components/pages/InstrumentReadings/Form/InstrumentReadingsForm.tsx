@@ -1,15 +1,15 @@
-import s from './FeedbackForm.module.scss';
+import s from './InstrumentReadingsForm.module.scss';
 import Input from 'components/Input';
 import Button from 'components/Button';
 import Form from 'components/Form/Form';
 import { memo, useEffect } from 'react';
 import Textarea from 'components/Textarea';
-import { ISendMailData } from 'types/form';
+import { useFormContext } from 'react-hook-form';
+import { ISendInstrumentReadingsData } from 'types/form';
 import { sendMail } from 'services/sendMail';
 import { toast } from 'react-toastify';
-import { useFormContext } from 'react-hook-form';
 
-const FeedbackForm = () => {
+const InstrumentReadingsForm = () => {
   const {
     formState: { isSubmitSuccessful },
     reset
@@ -23,32 +23,26 @@ const FeedbackForm = () => {
 
   return (
     <div className={s.root}>
-      <p className={s.memo}>* – обязательные поля для заполнения</p>
       <div className={s.inputs}>
-        <Input
-          placeholder="Наименование организации / ФИО"
-          isRequired
-          name="name"
-        />
-        <Input placeholder="Контактное лицо" name="contactPerson" />
-        <Input placeholder="Лицевой счет" name="personalAccount" />
+        <Input placeholder="ФИО" isRequired name="name" />
         <Input placeholder="Адрес" isRequired name="address" />
-        <Input placeholder="Email" isRequired name="email" />
-        <Input placeholder="Контактный телефон" isRequired name="phone" />
+        <Input placeholder="ГВС №1" name="gvs1" />
+        <Input placeholder="ГВС №2" name="gvs2" />
+        <Input placeholder="ХВС №1" name="hvs1" />
+        <Input placeholder="ХВС №2" name="hvs2" />
       </div>
-      <Textarea placeholder="Сообщение" isRequired name="message" />
       <Button type="submit" theme={['opal', 'big']} className={s.button}>
-        Отправить сообщение
+        Отправить показания
       </Button>
     </div>
   );
 };
 
 const FormContext = () => {
-  const submitHandler = async (data: ISendMailData) => {
+  const submitHandler = async (data: ISendInstrumentReadingsData) => {
     try {
-      const response = await sendMail<ISendMailData>(data, {
-        subject: 'Обратная связь'
+      const response = await sendMail<ISendInstrumentReadingsData>(data, {
+        subject: 'Передача показаний приборов учета'
       });
 
       if (response.data === 'success') {
@@ -63,7 +57,7 @@ const FormContext = () => {
 
   return (
     <Form submitHandler={submitHandler}>
-      <FeedbackForm />
+      <InstrumentReadingsForm />
     </Form>
   );
 };

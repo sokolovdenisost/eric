@@ -1,0 +1,27 @@
+@import 'styles/mixins.scss';
+@import 'styles/fonts.scss';
+@import 'styles/colors.scss';
+
+.root {
+  position: fixed;
+  bottom: size(20);
+  border-radius: 100px;
+  width: size(300);
+  padding: size(20);
+  background-color: $black;
+  border: size(1) solid $white;
+
+  @include mobile {
+    right: size(30);
+  }
+}
+
+.text {
+  @include f('normal');
+  color: $white;
+  text-align: center;
+
+  @include mobile {
+    @include f('m/normal');
+  }
+}

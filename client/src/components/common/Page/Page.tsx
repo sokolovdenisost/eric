@@ -6,6 +6,7 @@ import Mask from 'components/Animations/Mask';
 import { memo } from 'react';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import InstrumentReadingsButton from 'components/InstrumentReadingsButton';
 
 interface IPage {
   title: string;
@@ -30,6 +31,7 @@ const Page: FC<IPage> = ({ title, children }) => {
       <Header />
       {children}
       <Footer />
+      <InstrumentReadingsButton />
       <ToastContainer />
     </>
   );

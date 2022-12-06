@@ -18,7 +18,7 @@ export default async function handler(
       {
         from: 'no-reply@ooo-eric.ru',
         to: process.env.MAIL || '',
-        subject: 'Обратная связь',
+        subject: req.body.subject,
         html: getHtml(req.body)
       },
       (err, domain) => {
@@ -39,12 +39,18 @@ const keyNames: TKeys = {
   address: 'Адрес*',
   email: 'Email*',
   phone: 'Контактный телефон*',
-  message: 'Сообщение*'
+  message: 'Сообщение*',
+  gvs1: 'ГВС №1',
+  gvs2: 'ГВС №2',
+  hvs1: 'ХВС №1',
+  hvs2: 'ХВС №2'
 };
 
 const getHtml = (data: ISendMailData): string => {
   return Object.keys(data)
-    .map((key) => `<p>${keyNames[key]}: ${data[key] || '-'}</p>`)
+    .map((key) =>
+      keyNames[key] ? `<p>${keyNames[key]}: ${data[key] || '-'}</p>` : ''
+    )
     .join('');
 };
 

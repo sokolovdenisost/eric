@@ -1,5 +1,8 @@
-import { ISendMailData } from 'types/form';
 import axios from 'axios';
 
-export const sendMail = (data: ISendMailData) =>
-  axios.post('/api/send-mail', data).then((res) => res.data);
+interface IMailOptions {
+  subject: string;
+}
+
+export const sendMail = <T>(data: T, options: IMailOptions) =>
+  axios.post('/api/send-mail', { ...data, ...options }).then((res) => res.data);

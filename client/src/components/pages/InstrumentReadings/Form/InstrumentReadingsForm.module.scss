@@ -1,0 +1,48 @@
+@import 'styles/mixins.scss';
+@import 'styles/fonts.scss';
+@import 'styles/colors.scss';
+
+.root {
+  width: size(950);
+  margin: size(100) auto size(150);
+
+  @include mobile {
+    width: size(320);
+    margin: size(35) auto size(60);
+  }
+}
+
+.memo {
+  @include f('H4');
+  color: $opal;
+  margin-bottom: size(50);
+
+  @include mobile {
+    @include f('m/h4');
+  }
+}
+
+.inputs {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.inputs > label {
+  margin-bottom: size(50);
+
+  @include mobile {
+    margin-bottom: size(25);
+  }
+}
+
+.button {
+  display: block;
+  margin-top: size(100);
+  margin-left: auto;
+
+  @include mobile {
+    margin: size(50) auto 0;
+  }
+}
