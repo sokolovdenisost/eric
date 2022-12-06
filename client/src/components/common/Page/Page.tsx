@@ -4,6 +4,8 @@ import Header from 'components/Header';
 import Footer from 'components/Footer';
 import Mask from 'components/Animations/Mask';
 import { memo } from 'react';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 interface IPage {
   title: string;
@@ -17,11 +19,10 @@ const Page: FC<IPage> = ({ title, children }) => {
         <title>{title}</title>
       </Head>
 
-      <Mask config={{ duration: 0.5 }}>
-        <Header />
-      </Mask>
+      <Header />
       {children}
       <Footer />
+      <ToastContainer />
     </>
   );
 };

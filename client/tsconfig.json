@@ -26,7 +26,8 @@
       "images/*": ["public/images/*"],
       "hooks/*": ["src/hooks/*"],
       "stubs/*": ["src/stubs/*"],
-      "types/*": ["src/types/*"]
+      "types/*": ["src/types/*"],
+      "services/*": ["src/services/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],

@@ -1,10 +1,10 @@
 import type { FC, ReactNode } from 'react';
 import { memo } from 'react';
-import { FormProvider, useForm } from 'react-hook-form';
+import { FormProvider, SubmitHandler, useForm } from 'react-hook-form';
 
 interface IFrom {
   children: ReactNode;
-  submitHandler: <T>(data: T) => void;
+  submitHandler: SubmitHandler<any>;
 }
 
 const Form: FC<IFrom> = ({ children, submitHandler }) => {

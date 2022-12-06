@@ -3,7 +3,7 @@ import s from './Header.module.scss';
 import { nav, NavType } from 'constants/nav';
 import classNames from 'classnames';
 import Link from 'next/link';
-import { memo, useState } from 'react';
+import { memo, useEffect, useState } from 'react';
 import Mask from 'components/Animations/Mask';
 
 const getItem = (data: NavType) => (
@@ -14,6 +14,12 @@ const getItem = (data: NavType) => (
 
 const Header: FC = () => {
   const [active, setActive] = useState(false);
+
+  useEffect(() => {
+    document.body.style.height = active ? '100vh' : 'auto';
+    document.body.style.overflow = active ? 'hidden' : 'auto';
+  }, [active]);
+
   return (
     <header className={classNames(s.root, 'container')}>
       <Link href="/">
@@ -32,7 +38,9 @@ const Header: FC = () => {
           </Mask>
         )}
       </button>
-      <nav className={s.nav}>{nav.map(getItem)}</nav>
+      <nav className={classNames(s.nav, active && s.mobileNavActive)}>
+        {nav.map(getItem)}
+      </nav>
     </header>
   );
 };

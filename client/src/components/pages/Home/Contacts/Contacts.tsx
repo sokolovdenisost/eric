@@ -15,15 +15,7 @@ interface Props {
 }
 
 const getContacts = (data: TContact, idx: number) => (
-  <Fade
-    config={{
-      delay: 1 + 0.25 * idx,
-      fromTranslateY: '50%',
-      isScrollTrigger: true
-    }}
-  >
-    <Contact title={data.title} description={data.description} />
-  </Fade>
+  <Contact title={data.title} description={data.description} />
 );
 
 const Contacts: FC<Props> = ({ data }) => {

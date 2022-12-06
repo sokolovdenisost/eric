@@ -1,0 +1,65 @@
+@import 'styles/mixins.scss';
+@import 'styles/fonts.scss';
+@import 'styles/colors.scss';
+
+.root {
+  display: block;
+  width: 100%;
+  position: relative;
+
+  @include mobile {
+    width: size(320);
+  }
+}
+
+.label {
+  @include f('H4');
+  cursor: text;
+  position: absolute;
+  top: size(10);
+  left: size(10);
+  color: $gray;
+  transition: all 0.15s ease;
+
+  @include mobile {
+    @include f('m/h4');
+  }
+}
+
+.textarea {
+  @include f('H4');
+  border: none;
+  width: 100%;
+  border-bottom: size(1) solid $gray;
+  padding: size(10);
+  resize: vertical;
+  min-height: size(100);
+  height: size(100);
+  max-height: size(350);
+
+  @include mobile {
+    @include f('m/h4');
+    width: size(320);
+  }
+}
+
+.textarea:focus ~ .label,
+.textarea:valid ~ .label {
+  transform: translate3d(size(-10), -160%, 0);
+  @include f('normal');
+  color: $black;
+
+  @include mobile {
+    @include f('m/normal');
+  }
+}
+
+.textarea ~ .label.error,
+.textarea.error {
+  color: $red;
+  border-bottom-color: $red;
+}
+
+.textarea:focus {
+  outline: none;
+}
