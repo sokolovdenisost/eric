@@ -4,6 +4,7 @@ import DetailNews from 'pages/DetailNews';
 import { GetStaticPaths, GetStaticProps } from 'next';
 import { getAllPath, getSingleBySlug } from 'strapi/index';
 import { TDetailNews, TNews } from 'types/news';
+import { revalidate } from 'constants/common';
 
 interface IDetailNews {
   content: TDetailNews;
@@ -31,12 +32,14 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     const content = await getSingleBySlug('news-details', params!.slug, '*');
 
     return {
-      props: { content }
+      props: { content },
+      revalidate
     };
   } catch (e) {
     return {
       props: {},
-      notFound: true
+      notFound: true,
+      revalidate
     };
   }
 };

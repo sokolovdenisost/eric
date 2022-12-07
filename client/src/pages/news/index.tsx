@@ -4,6 +4,7 @@ import News from 'pages/News';
 import { GetStaticProps } from 'next';
 import { getCollection } from 'strapi/index';
 import { TNews } from 'types/news';
+import { revalidate } from 'constants/common';
 
 interface INews {
   content: TNews[];
@@ -21,7 +22,8 @@ export const getStaticProps: GetStaticProps = async () => {
   });
 
   return {
-    props: { content }
+    props: { content },
+    revalidate
   };
 };
 

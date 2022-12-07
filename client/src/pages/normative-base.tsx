@@ -3,6 +3,7 @@ import Page from 'components/Page';
 import NormativeBase from 'pages/NormativeBase';
 import { getSingle } from 'strapi/index';
 import type { TNormativeBase } from 'types/normative-base';
+import { revalidate } from 'constants/common';
 
 interface INormativeBase {
   content: {
@@ -20,7 +21,8 @@ export const getStaticProps: GetStaticProps = async () => {
   const content = await getSingle('normative-base-page', { populate: '*' });
 
   return {
-    props: { content }
+    props: { content },
+    revalidate
   };
 };
 

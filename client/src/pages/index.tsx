@@ -2,6 +2,7 @@ import type { GetStaticProps, NextPage } from 'next';
 import Page from 'components/Page';
 import Home from 'pages/Home';
 import { getSingle } from 'strapi/index';
+import { revalidate } from 'constants/common';
 
 const homePageProps = {
   populate: {
@@ -27,7 +28,8 @@ export const getStaticProps: GetStaticProps = async () => {
   const content = await getSingle('home-page', homePageProps);
 
   return {
-    props: { content }
+    props: { content },
+    revalidate
   };
 };
 
