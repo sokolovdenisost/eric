@@ -1,5 +1,5 @@
 import s from './Document.module.scss';
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import Link from 'next/link';
 import { TDocument } from 'types/news';
 
@@ -18,4 +18,4 @@ const Document: FC<TDocument> = ({ url, name }) => {
   );
 };
 
-export default Document;
+export default memo(Document);

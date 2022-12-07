@@ -1,8 +1,7 @@
 import Arrow from 'images/arrow.svg';
 import s from './Slide.module.scss';
-import React, { FC } from 'react';
+import React, { FC, memo } from 'react';
 import { TSlide } from 'types/home';
-import Mask from 'components/Animations/Mask';
 import classNames from 'classnames';
 
 interface Props {
@@ -54,4 +53,4 @@ const Slide: FC<Props> = ({
   );
 };
 
-export default Slide;
+export default memo(Slide);

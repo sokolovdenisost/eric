@@ -1,6 +1,6 @@
 import s from './Slider.module.scss';
 import Slide from 'pages/Home/Slider/Slide';
-import { FC, useState } from 'react';
+import { FC, memo, useState } from 'react';
 import { TSlide } from 'types/home';
 
 interface Props {
@@ -38,4 +38,4 @@ const Slider: FC<Props> = ({ about }) => {
   );
 };
 
-export default Slider;
+export default memo(Slider);

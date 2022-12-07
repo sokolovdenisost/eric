@@ -1,7 +1,6 @@
 import s from './Contacts.module.scss';
-import { FC } from 'react';
+import { FC, memo } from 'react';
 import { TContact } from 'types/home';
-import Fade from 'components/Animations/Fade';
 
 const Contact: FC<TContact> = ({ title, description }) => (
   <div className={s.contact}>
@@ -22,4 +21,4 @@ const Contacts: FC<Props> = ({ data }) => {
   return <div className={s.root}>{data.map(getContacts)}</div>;
 };
 
-export default Contacts;
+export default memo(Contacts);

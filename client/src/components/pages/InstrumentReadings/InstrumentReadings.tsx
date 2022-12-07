@@ -2,6 +2,7 @@ import Mask from 'components/Animations/Mask/Mask';
 import Fade from 'components/Animations/Fade/Fade';
 import s from './InstrumentReadings.module.scss';
 import Form from './Form';
+import { memo } from 'react';
 
 const InstrumentReadings = () => {
   return (
@@ -16,4 +17,4 @@ const InstrumentReadings = () => {
   );
 };
 
-export default InstrumentReadings;
+export default memo(InstrumentReadings);

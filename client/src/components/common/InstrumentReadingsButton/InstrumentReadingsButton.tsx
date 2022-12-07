@@ -1,6 +1,7 @@
 import s from './InstrumentReadingsButton.module.scss';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { memo } from 'react';
 
 const InstrumentReadingsButton = () => {
   const { asPath } = useRouter();
@@ -20,4 +21,4 @@ const InstrumentReadingsButton = () => {
   );
 };
 
-export default InstrumentReadingsButton;
+export default memo(InstrumentReadingsButton);
